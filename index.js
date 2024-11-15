@@ -21,8 +21,9 @@ app.get("/", function (req, res) {
 // your first API endpoint...
 app.get("/api/:date?", async function (req, res) {
   const response = await fetch(
-    `https://timestamp-microservice.freecodecamp.rocks/api/${req.query.date}`
+    `https://timestamp-microservice.freecodecamp.rocks/api/${req.params.date}`
   );
+
   res.json(await response.json());
 });
 
